@@ -1,36 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+html {
+    scroll-behavior: smooth;
+}
 
 .home-hero {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: white;
-    font-family: 'Inter', sans-serif;
-    padding: 0 20px;
-    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0 40px;
+    gap: 50px;
 }
 
-.hero-content {
+/* Sol taraf - fotoğraf */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-photo {
     max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+.hero-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Sağ taraf - başlık ve açıklama */
+.hero-right {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-right h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
-.hero-content p {
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ffb400; /* Navbar hover rengi ile uyumlu */
+}
+
+.hero-description {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     line-height: 1.6;
+    color: #e0e0e0;
 }
 
+/* Butonlar */
 .hero-buttons {
-    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -39,23 +74,24 @@
     border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-    margin: 0 10px;
-    user-select: none;
+    font-family: 'Segoe UI', sans-serif;
 }
 
+/* Primary buton */
 .btn-primary {
-    background-color: #ff6f61;
+    background-color: #ffb400;
     color: white;
-    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.4);
 }
 
 .btn-primary:hover {
-    background-color: #ff3b2d;
+    background-color: #ffa500;
     transform: translateY(-3px);
 }
 
+/* Secondary buton */
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -64,6 +100,37 @@
 
 .btn-secondary:hover {
     background-color: white;
-    color: #764ba2;
+    color: #203a43;
     transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .hero-left, .hero-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-right h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
 }
