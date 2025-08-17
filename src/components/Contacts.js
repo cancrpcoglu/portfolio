@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Contacs.css";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt, FaPhone } from "react-icons/fa";
-import cancv from "../assets/Can Çorapçıoğlu English CV A.pdf";
+import cancv from "../assets/Can ÇORAPÇIOĞLU Eng G.pdf";
 import emailjs from "@emailjs/browser";
 
 function Contacts() {
